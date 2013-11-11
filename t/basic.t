@@ -27,4 +27,4 @@ $p.parse("my \$p=3;
 ok $p.dumptokens().chars>0,"dumptokens basic test";
 ok $p.dumpranges().chars>0,"dumpranges basic test";
 
-done;
+#done;
