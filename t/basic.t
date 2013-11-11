@@ -1,6 +1,6 @@
 use v6;
 
-use Perl6::Parsing;
+#use Perl6::Parsing;
 use Test;
 plan 0;
 =begin comment
