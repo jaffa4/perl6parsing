@@ -2,7 +2,7 @@ use v6;
 
 use Perl6::Parsing;
 use Test;
-plan *;
+plan 6;
 
 ok Perl6::Parsing.new() ~~ Perl6::Parsing,
    'contructor';
