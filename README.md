@@ -2,8 +2,8 @@ Perl6::Parsing
 ==============
 
 
-It is a wrapper around nqp Perl6 parsing methods.
-Known problem: if it is compiled (Panda does that), use Perl6::Parsing fails. It seems to be a Rakudo bug.
+It is a wrapper around nqp Perl6 parsing methods.<br>
+Known problem: if it is compiled into pir. (Panda does that), use Perl6::Parsing fails. It seems to be a Rakudo bug.
 
 Usage:
 
