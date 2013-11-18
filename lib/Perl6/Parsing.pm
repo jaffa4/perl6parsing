@@ -36,6 +36,7 @@ sub test($f)
 
 }
 ';
+my $*LINEPOSCACHE;
 $!text  = $text;
 $!parser := Perl6::Grammar.parse( $text, :actions(Perl6::Actions.new())  ); 
 
