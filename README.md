@@ -8,7 +8,7 @@ Workaround: delete Parsing.pir.
 
 Usage:
 
-
+```perl
 use Perl6::Parsing;
 
 
@@ -34,4 +34,5 @@ For example, two consecutive comments may be returned as one token. Token bounda
 
 say @tokens.perl; # look at the structure
 
-Then say $p.dumptokens(); # shows better view
+say $p.dumptokens(); # shows better view
+```
