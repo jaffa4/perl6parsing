@@ -83,10 +83,11 @@ method walk($isprint,Mu $tree, $level,$key1?)
     print " "~$tree.HOW.name($tree);
     say " bool:"~$tree.Bool;
   }
-# if (%visited_objects.exists_key($tree))
+ if (%visited_objects($tree):exists)
 {
-#  return ;
+  return ;
 }
+%visited_objects{$tree} = True;
   
   if ($type eq "Parcel")
   {
