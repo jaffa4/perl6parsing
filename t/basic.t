@@ -23,6 +23,6 @@ $p.parse("my \$p=3;
 ");
 
 }
-
+#note $p.dumptokens().perl;
 ok $p.dumptokens().chars>0,"dumptokens basic test";
 ok $p.dumpranges().chars>0,"dumpranges basic test";
