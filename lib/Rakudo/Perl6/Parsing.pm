@@ -3,6 +3,8 @@ use Perl6::Actions:from<NQP>;
 
 use QRegex:from<NQP>; 
 
+use nqp;
+
 unit class Rakudo::Perl6::Parsing;
 
 
