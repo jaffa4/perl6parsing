@@ -1,13 +1,13 @@
 use v6;
 
-use Perl6::Parsing;
+use Rakudo::Perl6::Parsing;
 use Test;
 plan 4;
 
-ok Perl6::Parsing.new() ~~ Perl6::Parsing,
+ok Rakudo::Perl6::Parsing.new() ~~ Rakudo::Perl6::Parsing,
    'contructor';
 
-my $p = Perl6::Parsing.new();
+my $p = Rakudo::Perl6::Parsing.new();
 $p.parse("my \$p=3;
 ");
 #say "walktree";
