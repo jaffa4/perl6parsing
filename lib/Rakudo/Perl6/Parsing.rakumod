@@ -50,6 +50,7 @@ has $.callback;
 
 multi method walktree($isprint, $level,$key1="root")
 {
+
   %visited_objects= ();
   %visited_matches = ();
   self.walk($isprint,$!parser, $level,$key1);
@@ -76,7 +77,7 @@ method walk($isprint,Mu $tree, $level,$key1?)
 }
 #say ">>"~$isprint;
   my $type = $tree.HOW.name($tree);
-
+#say ("type " ~$type);
   my $indent = "  " x $level;
   if ($isprint)
   {
@@ -118,10 +119,11 @@ method walk($isprint,Mu $tree, $level,$key1?)
     say  "{$indent}bool:"~+$tree if $isprint;
   }
   #if $tree.^can('from')
-  if ($type eq "NQPMatch")
-  {
+  if ($type eq "Perl6::Grammar") #NQPMatch
+  { # say ("visited xxxx", $isprint);
     say "{$indent}Str:"~$tree.Str~" from:"~$tree.from~" to:"~$tree.to if $isprint;
     %visited_matches{$tree.from}.push( item ($key1,$tree.from,$tree.to) );
+     # say ("visited xxxx");
   }
   my $i=0;
   for $tree.list() ->$value 
@@ -161,15 +163,18 @@ method tokenise()
   self.walktree(False,0,"root");
   my @tokens;
   my %starts_ends;
-  
+ # print ("visited1", %visited_matches.gist);
   for sort { $^a <=> $^b },  keys %visited_matches 
   {
+      #print ("visited2");
     #say "hello $_" ~  %visited_matches{$_}.perl;
     my $min_to = 999999999999;
     #my $type = "";
     my %types;
     for @(%visited_matches{$_}) -> @item
     {
+        #print ("visited");
+        #say @item.gist;
       %starts_ends{$_}{@item[0]} = @item[2]; #start
       %starts_ends{@item[2]}{@item[0]~"_end"} = -1; #end
     }

@@ -1,10 +1,10 @@
 {
     "perl" : "6.*",
     "name" : "Rakudo::Perl6::Parsing",
-    "version" : "1.0",
+    "version" : "1.0.1",
     "description" : "parse Perl6",
     "provides" : {
-        "Rakudo::Perl6::Parsing" : "lib/Rakudo/Perl6/Parsing.pm"
+        "Rakudo::Perl6::Parsing" : "lib/Rakudo/Perl6/Parsing.rakumod"
     },
     "depends" : [ ],
     "source-url" : "git://github.com/jaffa4/perl6parsing.git"
